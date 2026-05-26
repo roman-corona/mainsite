@@ -5,21 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Roman Corona</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=IBM+Plex+Mono:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
     --bg: #0a0a0c;
     --surface: #111114;
-    --border: #1f1f24;
-    --text: #d4cfc8;
-    --text-dim: #6b6762;
-    --accent: #c8a96e;
-    --accent-dim: #7a6440;
-    --white: #f0ece6;
+    --border: #252528;
+    --text: #c8c3bc;
+    --text-body: #b8b4ae;
+    --text-dim: #8a8580;
+    --accent: #d4aa62;
+    --accent-dim: #8a6e3e;
+    --white: #f5f1eb;
     --mono: 'IBM Plex Mono', monospace;
     --serif: 'Cormorant Garamond', serif;
+    --sans: 'Inter', system-ui, -apple-system, sans-serif;
   }
 
   html { scroll-behavior: smooth; }
@@ -31,6 +33,8 @@
     min-height: 100vh;
     overflow-x: hidden;
     cursor: crosshair;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   /* Noise overlay */
@@ -102,7 +106,8 @@
 
   .nav-links a {
     font-size: 0.68rem;
-    letter-spacing: 0.12em;
+    font-weight: 500;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--text-dim);
     text-decoration: none;
@@ -127,8 +132,10 @@
   }
 
   .hero-label {
+    font-family: var(--sans);
     font-size: 0.65rem;
-    letter-spacing: 0.2em;
+    font-weight: 500;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--accent);
     margin-bottom: 1.5rem;
@@ -161,27 +168,29 @@
   }
 
   .hero-role {
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--text-dim);
     margin: 1.8rem 0 2.5rem;
-    line-height: 1.9;
+    line-height: 2;
   }
 
   .hero-bio {
-    font-family: var(--serif);
-    font-size: 1.15rem;
+    font-family: var(--sans);
+    font-size: 1rem;
     font-weight: 300;
-    line-height: 1.75;
-    color: var(--text);
-    max-width: 460px;
+    line-height: 1.85;
+    color: var(--text-body);
+    max-width: 480px;
     margin-bottom: 3rem;
   }
 
   .hero-bio strong {
     color: var(--white);
-    font-weight: 400;
+    font-weight: 500;
   }
 
   /* ─── PHOTO ─── */
@@ -247,10 +256,12 @@
     padding: 0.55rem 1rem;
     border: 1px solid var(--border);
     text-decoration: none;
-    font-size: 0.63rem;
-    letter-spacing: 0.12em;
+    font-family: var(--sans);
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--text-dim);
+    color: #a09b95;
     transition: all 0.25s;
     position: relative;
     overflow: hidden;
@@ -306,8 +317,10 @@
   }
 
   .section-tag {
+    font-family: var(--sans);
     font-size: 0.62rem;
-    letter-spacing: 0.2em;
+    font-weight: 500;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--accent);
     white-space: nowrap;
@@ -327,31 +340,37 @@
   }
 
   .about-label {
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
+    font-family: var(--sans);
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--text-dim);
     line-height: 2;
   }
 
   .about-label span {
+    font-family: var(--sans);
     display: block;
     color: var(--white);
-    font-size: 0.75rem;
-    margin-top: 0.25rem;
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    margin-top: 0.2rem;
+    text-transform: none;
   }
 
   .about-text {
-    font-family: var(--serif);
-    font-size: 1.2rem;
+    font-family: var(--sans);
+    font-size: 0.975rem;
     font-weight: 300;
-    line-height: 1.75;
-    color: var(--text);
+    line-height: 1.9;
+    color: var(--text-body);
   }
 
   .about-text p + p { margin-top: 1.5rem; }
-  .about-text strong { color: var(--white); font-weight: 400; }
-  .about-text em { color: var(--accent); font-style: italic; }
+  .about-text strong { color: var(--white); font-weight: 500; }
+  .about-text em { color: var(--accent); font-style: italic; font-family: var(--serif); font-size: 1.05em; }
 
   /* ─── CREDENTIALS ─── */
   #credentials {
@@ -378,9 +397,12 @@
   .cred-item:hover { background: var(--surface); }
 
   .cred-num {
+    font-family: var(--sans);
     font-size: 0.6rem;
-    letter-spacing: 0.15em;
-    color: var(--accent-dim);
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    opacity: 0.65;
     margin-bottom: 1.25rem;
   }
 
@@ -394,9 +416,12 @@
   }
 
   .cred-sub {
-    font-size: 0.65rem;
-    letter-spacing: 0.08em;
-    color: var(--text-dim);
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: #908b85;
+    line-height: 1.6;
   }
 
   /* ─── PROJECTS ─── */
@@ -427,9 +452,12 @@
   .project-item:hover { background: var(--surface); }
 
   .project-num {
+    font-family: var(--sans);
     font-size: 0.6rem;
-    letter-spacing: 0.1em;
-    color: var(--accent-dim);
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    opacity: 0.65;
   }
 
   .project-name {
@@ -441,19 +469,23 @@
   }
 
   .project-desc {
-    font-size: 0.68rem;
-    color: var(--text-dim);
-    letter-spacing: 0.04em;
-    line-height: 1.6;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: #908b85;
+    letter-spacing: 0.01em;
+    line-height: 1.7;
   }
 
   .project-tag {
+    font-family: var(--sans);
     font-size: 0.58rem;
-    letter-spacing: 0.12em;
+    font-weight: 500;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    padding: 0.3rem 0.75rem;
+    padding: 0.3rem 0.8rem;
     border: 1px solid var(--border);
-    color: var(--text-dim);
+    color: #908b85;
     white-space: nowrap;
   }
 
@@ -475,8 +507,10 @@
   }
 
   .footer-copy {
-    font-size: 0.6rem;
-    letter-spacing: 0.12em;
+    font-family: var(--sans);
+    font-size: 0.62rem;
+    font-weight: 400;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--text-dim);
   }
@@ -537,7 +571,7 @@
       Prior Service USMC &nbsp;·&nbsp; Data Science Graduate Candidate
     </div>
     <p class="hero-bio">
-      I build systems that make complex programs legible — from aerospace supply chain tools to 
+      I build systems that make complex programs legible, from aerospace supply chain tools to 
       <strong>custom web applications</strong> that replace what spreadsheets can't hold. 
       Former <em>Marine legal services specialist</em>, now applying that same structured process and analytical discipline to 
       operations, data, and program management.
@@ -600,13 +634,12 @@
         <p>
           I'm a program manager and operations builder with a background that spans 
           <strong>aerospace supply chain</strong>, counterintelligence, and investment banking. 
-          Seven years as an active duty Marine — specializing in legal services and military justice — gave me a framework for structured process, documentation rigor, and operating under institutional pressure that I've applied to every industry since.
+          Seven years as an active duty Marine, specializing in legal services and military justice, gave me a framework for structured process, documentation rigor, and operating under institutional pressure that I've applied to every industry since.
         </p>
         <p>
           At Boeing, I manage a multi-site Honeywell Aerospace account, coordinating execution 
           across teams, building the data infrastructure to surface what matters, and replacing 
-          legacy reporting with <em>tools that actually work</em>. I build in the open — 
-          custom dashboards, supply chain analytics, and web applications deployed to production.
+          legacy reporting with <em>tools that actually work</em>. I build in the open: custom dashboards, supply chain analytics, and web applications deployed to production.
         </p>
         <p>
           I'm completing a <strong>Master's in Data Science</strong> alongside a full workload, 
